@@ -23,8 +23,12 @@ jobs:
 
       - name: Install, build, and upload
         uses: withastro/action@v3
-        # Uses Node 20 and npm ci + astro build by default, then uploads
-        # the `dist/` folder as a Pages artifact.
+        with:
+          # Astro 7 requires Node >=22.12; Node 20 is deprecated on
+          # GitHub Actions runners.
+          node-version: 24
+        # Uses npm ci + astro build by default, then uploads the `dist/`
+        # folder as a Pages artifact.
 
   deploy:
     needs: build
