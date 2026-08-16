@@ -1,0 +1,145 @@
+---
+import ThemeInit from "../components/ThemeInit.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../data/site";
+import { socials } from "../data/socials";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  // Pass for individual writing posts so JSON-LD emits BlogPosting
+  // instead of the default Person schema, and OG type becomes "article".
+  article?: {
+    publishDate: Date;
+    updatedDate?: Date;
+    tags: string[];
+  };
+}
+
+const {
+  title,
+  description = site.tagline,
+  article,
+} = Astro.props as Props;
+
+const pageTitle = title ? `${title} \u2014 ${site.name}` : site.name;
+const canonicalURL = new URL(Astro.url.pathname, site.url).toString();
+const ogImage = new URL("/og.png", site.url).toString();
+const ogImageAlt = `${site.name} \u2014 personal site, writing, and projects`;
+
+const personLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  url: site.url,
+  description: site.tagline,
+  // sameAs is what ties all your profiles together for both Google's
+  // Knowledge Graph and AI answer engines looking for verifiable identity.
+  sameAs: socials.map((s) => s.url),
+};
+
+const webSiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: site.name,
+  url: site.url,
+  description: site.tagline,
+};
+
+const articleLd = article
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: title,
+      description,
+      url: canonicalURL,
+      datePublished: article.publishDate.toISOString(),
+      dateModified: (article.updatedDate ?? article.publishDate).toISOString(),
+      keywords: article.tags.join(", "),
+      author: { "@type": "Person", name: site.name, url: site.url },
+      mainEntityOfPage: canonicalURL,
+      image: ogImage,
+    }
+  : null;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${site.name} \u2014 RSS feed`}
+      href="/rss.xml"
+    />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Core SEO -->
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph: Facebook, Instagram, LinkedIn, WhatsApp, Slack, Telegram,
+         and most other link unfurlers read exactly this set. -->
+    <meta property="og:type" content={article ? "article" : "website"} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:url" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    {
+      article && (
+        <>
+          <meta property="article:published_time" content={article.publishDate.toISOString()} />
+          <meta property="article:modified_time" content={(article.updatedDate ?? article.publishDate).toISOString()} />
+          <meta property="article:author" content={site.url} />
+        </>
+      )
+    }
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@nagusubra" />
+    <meta name="twitter:creator" content="@nagusubra" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+
+    <!-- Structured data: helps both classic search and AI answer engines
+         understand who this is and what this page is, directly. -->
+    <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webSiteLd)} />
+    {
+      articleLd && (
+        <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+      )
+    }
+
+    <ThemeInit />
+  </head>
+  <body class="min-h-screen bg-bg text-fg antialiased">
+    <Header />
+    <main class="mx-auto max-w-2xl px-6 sm:px-0">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

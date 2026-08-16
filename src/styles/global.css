@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------
+   Design tokens
+   Base: near-black / warm off-white, in the Brian-Lovin-style monochrome
+   family. Accent: a muted warm gold -- NOT the terracotta/clay you see
+   on every AI-generated site right now. Type: Geist Sans + Geist Mono,
+   same lineage as the sites you pointed to, self-hosted (no Google Fonts
+   request, keeps first paint fast).
+------------------------------------------------------------------------ */
+
+:root {
+  --bg: #fafaf9;
+  --bg-elevated: #f2f1ee;
+  --fg: #18181b;
+  --muted: #6b6b6b;
+  --border: #e5e5e0;
+  --accent: #a8781f;
+  --accent-fg: #ffffff;
+
+  --font-sans:
+    "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:
+    "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  color-scheme: light;
+}
+
+:root.dark {
+  --bg: #0a0a0a;
+  --bg-elevated: #131313;
+  --fg: #ededec;
+  --muted: #8f8f8f;
+  --border: #232323;
+  --accent: #d4af5a;
+  --accent-fg: #0a0a0a;
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/GeistMono-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-accent-fg);
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+/* Respect reduced motion everywhere, not just in one component. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Gentle one-time entrance for content on first load -- the "small
+   animation" you liked, used exactly once per page, not scattered. */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: rise-in 0.5s ease both;
+}
+
+/* Prose styles for rendered Markdown/MDX posts */
+.prose {
+  color: var(--color-fg);
+  max-width: 65ch;
+  line-height: 1.7;
+}
+.prose h2 {
+  font-weight: 600;
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  font-size: 1.25em;
+}
+.prose h3 {
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  font-size: 1.1em;
+}
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+.prose a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--color-bg-elevated);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+.prose pre {
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+}
+.prose pre code {
+  background: none;
+  padding: 0;
+}
+.prose blockquote {
+  border-left: 2px solid var(--color-accent);
+  padding-left: 1em;
+  color: var(--color-muted);
+  font-style: italic;
+}
+.prose ul,
+.prose ol {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+.prose li {
+  margin-top: 0.4em;
+}

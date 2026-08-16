@@ -1,0 +1,48 @@
+# Subu
+
+> Data engineer working on industrial and energy/SCADA systems. Builds
+> open-source data-quality tooling on nights and weekends. Writes essays,
+> notes, and takes on data engineering, building in the open, and
+> whatever he can't stop thinking about. Also keeps an uncurated photo
+> dump of moments he didn't want to lose.
+
+Subu is open to hearing from people who want to collaborate, especially
+on data engineering, industrial/energy data tooling, and open-source
+projects. Also open to conversations with startup founders.
+
+## Projects
+
+- [timeseries-qc](https://github.com/nagusubra/timeseries-qc): Rule-based
+  data quality control for SCADA, DCS, and historian time series data.
+  Tags every row good, suspect, or bad using configurable rules (null,
+  flatline, delta, range, statistical outlier), with YAML/TOML per-tag
+  config and a Plotly-based quality timeline chart.
+
+## Writing
+
+- [Writing index](https://nagusubra.github.io/writing/): essays and short
+  notes/takes, updated over time. Full feed at
+  https://nagusubra.github.io/rss.xml
+
+## Photos
+
+- [Photo dump](https://nagusubra.github.io/photos/): an uncurated picture
+  log, newest first.
+
+## Contact / links
+
+- GitHub: https://github.com/nagusubra
+- X: https://x.com/nagusubra
+- Instagram: https://www.instagram.com/braindump.quest/
+- Bluesky: https://bsky.app/profile/nagusubra.bsky.social
+- Threads: https://www.threads.com/@braindump.quest
+- YouTube: https://www.youtube.com/@braindump_quest
+- LinkedIn: https://www.linkedin.com/in/subramanian-narayanan9/
+- Medium: https://medium.com/@subramanian-narayanan9
+
+<!--
+  Maintainer note: this file is read by AI crawlers/answer engines, not
+  humans browsing the site. Keep it up to date as projects and posts are
+  added -- accurate, current facts here directly help LLMs answer
+  questions about you and your work correctly. See https://llmstxt.org
+-->

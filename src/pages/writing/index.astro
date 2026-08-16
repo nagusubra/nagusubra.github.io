@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+const allPosts = await getCollection("writing", ({ data }) => !data.draft);
+const posts = allPosts.sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+);
+
+const dateFmt = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
+---
+
+<Base
+  title="Writing"
+  description="Essays, notes, and takes -- on data engineering, building in the open, and whatever I can't stop thinking about."
+>
+  <section class="rise-in py-10">
+    <h1 class="mb-2 text-2xl font-semibold tracking-tight text-fg">
+      Writing
+    </h1>
+    <p class="mb-10 text-muted">
+      Essays, notes, and takes. New posts land here first, RSS second.
+    </p>
+
+    {
+      posts.length === 0 ? (
+        <p class="rounded-lg border border-dashed border-border px-5 py-8 text-sm text-muted">
+          Nothing published yet -- first post is on its way. Check back
+          soon, or grab the{" "}
+          <a href="/rss.xml" class="text-accent underline">
+            RSS feed
+          </a>{" "}
+          to be the first to know.
+        </p>
+      ) : (
+        <ul class="flex flex-col gap-7">
+          {posts.map((post) => (
+            <li>
+              <a href={`/writing/${post.id}/`} class="group block">
+                <div class="flex items-baseline justify-between gap-4">
+                  <span class="font-medium text-fg transition-colors group-hover:text-accent">
+                    {post.data.title}
+                  </span>
+                  <span class="shrink-0 font-mono text-xs text-muted">
+                    {dateFmt.format(post.data.publishDate)}
+                  </span>
+                </div>
+                <p class="mt-1 text-sm text-muted">{post.data.description}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+</Base>

@@ -1,0 +1,62 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+const allPhotos = await getCollection("photos", ({ data }) => !data.draft);
+const photos = allPhotos.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const dateFmt = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
+---
+
+<Base
+  title="Photos"
+  description="The photo dump -- an uncurated scrapbook of moments, places, and things worth pointing a lens at."
+>
+  <section class="rise-in py-10">
+    <h1 class="mb-2 text-2xl font-semibold tracking-tight text-fg">
+      Photos
+    </h1>
+    <p class="mb-10 max-w-lg text-muted">
+      The photo dump. Uncurated, unsequenced, mostly unfiltered -- just
+      moments I didn't want to lose.
+    </p>
+
+    {
+      photos.length === 0 ? (
+        <p class="rounded-lg border border-dashed border-border px-5 py-8 text-sm text-muted">
+          Nothing here yet -- first photo dump is coming. Add files to{" "}
+          <code class="font-mono">public/photos/</code> and drop a file in{" "}
+          <code class="font-mono">src/content/photos/</code> to populate this
+          page (see <code class="font-mono">templates/new-photo.md</code>).
+        </p>
+      ) : (
+        <div class="columns-1 gap-6 sm:columns-2">
+          {photos.map((p) => (
+            <figure class="rise-in mb-6 break-inside-avoid" style={`animation-delay: ${photos.indexOf(p) * 40}ms`}>
+              <img
+                src={p.data.image}
+                alt={p.data.alt}
+                loading="lazy"
+                decoding="async"
+                class="w-full rounded-xl border border-border"
+              />
+              <figcaption class="mt-2 text-sm text-muted">
+                {p.data.caption}
+                <span class="mt-0.5 block font-mono text-xs text-muted/70">
+                  {p.data.location && `${p.data.location} \u00b7 `}
+                  {dateFmt.format(p.data.date)}
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      )
+    }
+  </section>
+</Base>

@@ -1,0 +1,18 @@
+---
+// Inlined (not an external file) and placed in <head> so it runs before
+// first paint -- this is what prevents the light-mode flash on a dark
+// system/saved preference. Keep this tiny; it's on the critical path.
+---
+
+<script is:inline>
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      var dark = stored ? stored === "dark" : prefersDark;
+      document.documentElement.classList.toggle("dark", dark);
+    } catch (e) {}
+  })();
+</script>
