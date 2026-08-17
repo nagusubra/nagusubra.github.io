@@ -1,6 +1,7 @@
 ---
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import { readingTimeMinutes } from "../../utils/readingTime";
 
 export async function getStaticPaths() {
   const posts = await getCollection("writing", ({ data }) => !data.draft);
@@ -56,6 +57,9 @@ const dateFmt = new Intl.DateTimeFormat("en-US", {
           </span>
         )
       }
+      <span class="font-mono text-xs text-muted">
+        &middot; {readingTimeMinutes(post.body)} min read
+      </span>
     </div>
     <div class="reveal prose mt-10" style="animation-delay: 260ms">
       <Content />
