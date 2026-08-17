@@ -44,8 +44,10 @@ src/
     rss.xml.js              # RSS feed
 public/
   photos/          # the actual image files, referenced from content/photos/
-  og.png           # 1200x630 social share card (Open Graph / Twitter)
+  social-card.png  # 1200x630 Open Graph share card (Facebook/WhatsApp/etc)
+  twitter-card.png # 1200x675 Twitter/X share card
   apple-touch-icon.png
+  google03b204e9872dc50f.html # Google Search Console verification -- keep it
 templates/
   new-post-template.md   # copy into src/content/writing/ for a new post
   new-photo.md           # copy into src/content/photos/ for a new photo
@@ -122,11 +124,13 @@ You don't need to touch any code:
 ## SEO / AEO notes
 
 - Every page has a canonical URL, description, and Open Graph/Twitter
-  cards (`src/layouts/Base.astro`): `og:image` (the 1200x630 card in
-  `public/og.png`), `twitter:card=summary_large_image`, `twitter:site`,
-  and `article:*` tags on posts. That set is what Facebook, Instagram,
-  LinkedIn, WhatsApp, Slack, Telegram, and X all read, so link previews
-  are consistent everywhere.
+  cards (`src/layouts/Base.astro`): `og:image` points at
+  `public/social-card.png` (1200x630 -- the universal standard used by
+  Facebook, Instagram, LinkedIn, WhatsApp, Slack, Telegram), and
+  `twitter:image` at `public/twitter-card.png` (1200x675 -- X/Twitter's
+  native ratio), plus `twitter:card=summary_large_image`,
+  `twitter:site`, and `article:*` tags on posts. Replace those two PNGs
+  any time to restyle every link preview on the site.
 - JSON-LD structured data: `Person` schema site-wide (with `sameAs`
   listing every social profile), `WebSite` schema, and `BlogPosting`
   schema on every post -- this is what helps both Google and AI answer

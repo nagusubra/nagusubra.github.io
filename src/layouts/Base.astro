@@ -26,7 +26,10 @@ const {
 
 const pageTitle = title ? `${title} \u2014 ${site.name}` : site.name;
 const canonicalURL = new URL(Astro.url.pathname, site.url).toString();
-const ogImage = new URL("/og.png", site.url).toString();
+// Open Graph image: 1200x630 (universal 1.91:1 -- Facebook, WhatsApp,
+// LinkedIn, Discord, Slack). Twitter/X card: 1200x675 (X native 16:9).
+const ogImage = new URL("/social-card.png", site.url).toString();
+const twitterImage = new URL("/twitter-card.png", site.url).toString();
 const ogImageAlt = `${site.name} \u2014 personal site, writing, and projects`;
 
 const personLd = {
@@ -120,7 +123,7 @@ const articleLd = article
     <meta name="twitter:creator" content="@nagusubra" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={twitterImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
 
     <!-- Structured data: helps both classic search and AI answer engines
