@@ -7,7 +7,7 @@ kind: "essay"
 draft: false
 ---
 
-### [50 days of problem hunting !](/writing/why-understanding-the-problem-is-the-key-and-einsteins-wisdom/)🎯Problem 5
+### [50 days of problem hunting !](/blog/why-understanding-the-problem-is-the-key-and-einsteins-wisdom/)🎯Problem 5
 
 #### Perishable grocery is wasted at home by working individuals due to unawareness or apathy leading to redundant purchases, expired items, and financial strain.
 

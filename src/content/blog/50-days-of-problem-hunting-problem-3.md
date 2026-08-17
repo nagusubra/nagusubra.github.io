@@ -7,7 +7,7 @@ kind: "essay"
 draft: false
 ---
 
-### [50 days of problem hunting !](/writing/why-understanding-the-problem-is-the-key-and-einsteins-wisdom/)🎯Problem 3
+### [50 days of problem hunting !](/blog/why-understanding-the-problem-is-the-key-and-einsteins-wisdom/)🎯Problem 3
 
 #### Delayed and unreliable power supplies in disaster-affected regions disrupt disaster management efforts, healthcare services, and communications and threaten individuals’ livelihoods.
 

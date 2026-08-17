@@ -7,7 +7,7 @@ kind: "essay"
 draft: false
 ---
 
-### [50 days of problem hunting !](/writing/why-understanding-the-problem-is-the-key-and-einsteins-wisdom/)🎯Problem 4
+### [50 days of problem hunting !](/blog/why-understanding-the-problem-is-the-key-and-einsteins-wisdom/)🎯Problem 4
 
 #### Banking apps fail to proactively guide users with poor financial literacy toward better spending and credit habits, leading to financial vulnerability.
 

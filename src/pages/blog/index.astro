@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import { readingTimeMinutes } from "../../utils/readingTime";
 
-const allPosts = await getCollection("writing", ({ data }) => !data.draft);
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 const posts = allPosts.sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
@@ -16,12 +16,12 @@ const dateFmt = new Intl.DateTimeFormat("en-US", {
 ---
 
 <Base
-  title="Writing"
+  title="Blog"
   description="Essays, notes, and takes -- on context engineering, building in the open, and whatever I can't stop thinking about."
 >
   <section class="py-10">
     <h1 class="reveal reveal-hero mb-2 text-2xl font-semibold tracking-tight text-fg">
-      Writing
+      Blog
     </h1>
     <p class="reveal mb-10 text-muted" style="animation-delay: 120ms">
       Essays, notes, and takes. New posts land here first, RSS second.
@@ -41,7 +41,7 @@ const dateFmt = new Intl.DateTimeFormat("en-US", {
         <ul class="flex flex-col gap-7">
           {posts.map((post, i) => (
             <li class="reveal" style={`animation-delay: ${240 + i * 80}ms`}>
-              <a href={`/writing/${post.id}/`} class="group block">
+              <a href={`/blog/${post.id}/`} class="group block">
                 <div class="flex items-baseline justify-between gap-4">
                   <span class="font-medium text-fg transition-colors group-hover:text-accent">
                     {post.data.title}

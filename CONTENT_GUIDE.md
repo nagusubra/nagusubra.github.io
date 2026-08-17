@@ -31,7 +31,7 @@ sharpen it until it couldn't.
 
 ## Post types
 
-Both live in `src/content/writing/` as the same collection, just
+Both live in `src/content/blog/` as the same collection, just
 different `kind`:
 
 - `kind: "essay"` -- longer-form, a real argument or story. Patterns
@@ -52,6 +52,6 @@ publish step, no other config needed.
 
 ## Start a new post
 
-Copy `templates/new-post-template.md` into `src/content/writing/` with a
+Copy `templates/new-post-template.md` into `src/content/blog/` with a
 descriptive filename (e.g. `sql-vs-pandas-for-scada-cleanup.md`), fill it
 in, done.

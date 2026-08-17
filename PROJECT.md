@@ -9,7 +9,7 @@ README deliberately stays short.
 - **Astro** -- pages render to static HTML at build time.
 - **Tailwind CSS v4** -- utility styling, no separate config file needed.
 - **Markdown/MDX content collections** -- every blog post is one file in
-  `src/content/writing/`.
+  `src/content/blog/`.
 - **@astrojs/sitemap** + a hand-written RSS route -- both generated at
   build time, no manual upkeep.
 - Self-hosted **Geist** variable fonts (SIL OFL licensed) in
@@ -57,7 +57,7 @@ public/
 scripts/
   gen-favicon.ps1  # regenerates the whole favicon set from public/subu-logo.jpg
 templates/
-  new-post-template.md   # copy into src/content/writing/ for a new post
+  new-post-template.md   # copy into src/content/blog/ for a new post
   new-photo.md           # copy into src/content/photos/ for a new photo
 CONTENT_GUIDE.md          # voice/style notes -- read before drafting
 ```
@@ -85,14 +85,14 @@ are referenced. The favicon set is what actually gets served, so keep the
 
 ## Publishing a new post
 
-1. Copy `templates/new-post-template.md` into `src/content/writing/` with
+1. Copy `templates/new-post-template.md` into `src/content/blog/` with
    a descriptive filename.
 2. Fill in the frontmatter and write the post. Leave `draft: true` while
    you're working on it -- draft posts never show up on the live site.
 3. When ready: set `draft: false`, set `publishDate` to today, commit,
    and push to `main`.
 4. GitHub Actions rebuilds and redeploys automatically. The post appears
-   on `/writing`, in `rss.xml`, and in the sitemap with no other steps.
+   on `/blog`, in `rss.xml`, and in the sitemap with no other steps.
 
 ## Publishing a photo
 
@@ -171,4 +171,4 @@ You don't need to touch any code:
   emerging `llms.txt` convention -- see llmstxt.org). Keep it in sync as
   you add real projects and posts.
 - Sitemap (`/sitemap-index.xml`) and RSS (`/rss.xml`) are both generated
-  automatically at build time from whatever's in `src/content/writing/`.
+  automatically at build time from whatever's in `src/content/blog/`.
