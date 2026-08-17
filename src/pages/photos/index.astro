@@ -18,18 +18,18 @@ const dateFmt = new Intl.DateTimeFormat("en-US", {
   title="Photos"
   description="The photo dump -- an uncurated scrapbook of moments, places, and things worth pointing a lens at."
 >
-  <section class="rise-in py-10">
-    <h1 class="mb-2 text-2xl font-semibold tracking-tight text-fg">
+  <section class="py-10">
+    <h1 class="reveal reveal-hero mb-2 text-2xl font-semibold tracking-tight text-fg">
       Photos
     </h1>
-    <p class="mb-10 max-w-lg text-muted">
+    <p class="reveal mb-10 max-w-lg text-muted" style="animation-delay: 120ms">
       The photo dump. Uncurated, unsequenced, mostly unfiltered -- just
       moments I didn't want to lose.
     </p>
 
     {
       photos.length === 0 ? (
-        <p class="rounded-lg border border-dashed border-border px-5 py-8 text-sm text-muted">
+        <p class="reveal rounded-lg border border-dashed border-border px-5 py-8 text-sm text-muted" style="animation-delay: 220ms">
           Nothing here yet -- first photo dump is coming. Add files to{" "}
           <code class="font-mono">public/photos/</code> and drop a file in{" "}
           <code class="font-mono">src/content/photos/</code> to populate this
@@ -38,7 +38,7 @@ const dateFmt = new Intl.DateTimeFormat("en-US", {
       ) : (
         <div class="columns-1 gap-6 sm:columns-2">
           {photos.map((p) => (
-            <figure class="rise-in mb-6 break-inside-avoid" style={`animation-delay: ${photos.indexOf(p) * 40}ms`}>
+            <figure class="reveal mb-6 break-inside-avoid" style={`animation-delay: ${photos.indexOf(p) * 90}ms`}>
               <img
                 src={p.data.image}
                 alt={p.data.alt}

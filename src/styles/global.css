@@ -119,6 +119,32 @@ a {
   animation: rise-in 0.5s ease both;
 }
 
+/* The "loads elegantly" reveal: content rises a touch, un-blurs into
+   sharpness, one soft wave down the page. Elements get staggered via an
+   inline `animation-delay` (see pages/index.astro). Reduced-motion users
+   skip all of it automatically via the media rule above. */
+@keyframes elegant-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.reveal {
+  animation: elegant-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Give the big hero text a little more room to breathe into place. */
+.reveal-hero {
+  animation-duration: 1.1s;
+}
+
 /* Prose styles for rendered Markdown/MDX posts */
 .prose {
   color: var(--color-fg);

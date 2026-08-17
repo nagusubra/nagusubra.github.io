@@ -18,17 +18,17 @@ const dateFmt = new Intl.DateTimeFormat("en-US", {
   title="Writing"
   description="Essays, notes, and takes -- on data engineering, building in the open, and whatever I can't stop thinking about."
 >
-  <section class="rise-in py-10">
-    <h1 class="mb-2 text-2xl font-semibold tracking-tight text-fg">
+  <section class="py-10">
+    <h1 class="reveal reveal-hero mb-2 text-2xl font-semibold tracking-tight text-fg">
       Writing
     </h1>
-    <p class="mb-10 text-muted">
+    <p class="reveal mb-10 text-muted" style="animation-delay: 120ms">
       Essays, notes, and takes. New posts land here first, RSS second.
     </p>
 
     {
       posts.length === 0 ? (
-        <p class="rounded-lg border border-dashed border-border px-5 py-8 text-sm text-muted">
+        <p class="reveal rounded-lg border border-dashed border-border px-5 py-8 text-sm text-muted" style="animation-delay: 240ms">
           Nothing published yet -- first post is on its way. Check back
           soon, or grab the{" "}
           <a href="/rss.xml" class="text-accent underline">
@@ -38,8 +38,8 @@ const dateFmt = new Intl.DateTimeFormat("en-US", {
         </p>
       ) : (
         <ul class="flex flex-col gap-7">
-          {posts.map((post) => (
-            <li>
+          {posts.map((post, i) => (
+            <li class="reveal" style={`animation-delay: ${240 + i * 80}ms`}>
               <a href={`/writing/${post.id}/`} class="group block">
                 <div class="flex items-baseline justify-between gap-4">
                   <span class="font-medium text-fg transition-colors group-hover:text-accent">

@@ -1,12 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#0a0a0a" />
-  <text
-    x="16"
-    y="22"
-    text-anchor="middle"
-    font-family="ui-sans-serif, system-ui, sans-serif"
-    font-size="17"
-    font-weight="600"
-    fill="#d4af5a"
-  >S</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Original mono hero badge: a diamond shield with a stylized S.
+       Geometric primitives only -- a nod to the classic mark, not a copy. -->
+  <path
+    d="M32 4 L60 26 L32 60 L4 26 Z"
+    fill="#0a0a0a"
+  />
+  <path
+    d="M24 18 h12 a8 8 0 0 1 0 16 h-8 a8 8 0 0 0 0 16 h12"
+    fill="none"
+    stroke="#fafaf9"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
 </svg>
