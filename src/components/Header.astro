@@ -3,7 +3,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 import { site } from "../data/site";
 
 const { pathname } = Astro.url;
-const isWriting = pathname.startsWith("/writing");
+const isWriting = pathname.startsWith("/blog");
 const isPhotos = pathname.startsWith("/photos");
 ---
 
@@ -27,13 +27,13 @@ const isPhotos = pathname.startsWith("/photos");
       Photos
     </a>
     <a
-      href="/writing"
+      href="/blog"
       class:list={[
         "text-sm transition-colors hover:text-fg",
         isWriting ? "text-fg" : "text-muted",
       ]}
     >
-      Writing
+      Blog
     </a>
     <ThemeToggle />
   </nav>

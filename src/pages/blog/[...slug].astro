@@ -4,7 +4,7 @@ import Base from "../../layouts/Base.astro";
 import { readingTimeMinutes } from "../../utils/readingTime";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("writing", ({ data }) => !data.draft);
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  post: CollectionEntry<"writing">;
+  post: CollectionEntry<"blog">;
 }
 
 const { post } = Astro.props;
@@ -36,10 +36,10 @@ const dateFmt = new Intl.DateTimeFormat("en-US", {
 >
   <article class="py-10">
     <a
-      href="/writing"
+      href="/blog"
       class="reveal mb-8 inline-block font-mono text-xs text-muted hover:text-accent"
     >
-      &larr; all writing
+      &larr; all blog
     </a>
     <h1 class="reveal reveal-hero text-2xl font-semibold tracking-tight text-fg sm:text-3xl">
       {post.data.title}

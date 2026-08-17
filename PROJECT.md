@@ -92,7 +92,7 @@ are referenced. The favicon set is what actually gets served, so keep the
 3. When ready: set `draft: false`, set `publishDate` to today, commit,
    and push to `main`.
 4. GitHub Actions rebuilds and redeploys automatically. The post appears
-   on `/writing`, in `rss.xml`, and in the sitemap with no other steps.
+   on `/blog`, in `rss.xml`, and in the sitemap with no other steps.
 
 ## Publishing a photo
 

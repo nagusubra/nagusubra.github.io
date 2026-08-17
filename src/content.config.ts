@@ -5,11 +5,11 @@ import { glob } from "astro/loaders";
 // as a single Markdown or MDX file. See templates/new-post-template.md
 // for a blank starting point, and CONTENT_GUIDE.md at the repo root for
 // voice/style notes.
-const writing = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/writing" }),
+const blog = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),
   schema: z.object({
     title: z.string(),
-    // One or two sentences. Shows in the writing list, RSS, and social
+    // One or two sentences. Shows in the blog list, RSS, and social
     // previews (og:description) -- this is doing SEO/AEO work, not just decoration.
     description: z.string(),
     publishDate: z.date(),
@@ -40,4 +40,4 @@ const photos = defineCollection({
   }),
 });
 
-export const collections = { writing, photos };
+export const collections = { blog, photos };
