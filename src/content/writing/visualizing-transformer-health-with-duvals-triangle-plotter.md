@@ -58,29 +58,35 @@ To use the Duval’s Triangle Plotter, you’ll need:
 
 Clone the repository from GitHub:
 
-git clone https://github.com/nagusubra/duvals\_triangle\_plotter.git  
-cd duvals\_triangle\_plotter
+```
+git clone https://github.com/nagusubra/duvals_triangle_plotter.git
+cd duvals_triangle_plotter
+```
 
 Install the dependencies:
 
+```
 pip install duvals-triangle-plotter==1.0
+```
 
 #### Usage
 
 Run the script and input your gas concentration data. For example:
 
-import duvals\_triangle\_plotter as dtp  
-  
-methane\_points\_list = \[0.09\] # units = ppm  
-acetylene\_points\_list = \[0.0\] # units = ppm  
-ethylene\_points\_list = \[0.91\] # units = ppm  
-date = "2000-08-16"  
-  
-\# Call the function to get Duval's Triangle traces  
-duval\_trace = dtp.get\_duval\_points\_traces(methane\_points\_list, acetylene\_points\_list, ethylene\_points\_list, date)  
-  
-\# Call the function to get Duval's Triangle plot  
-fig = dtp.get\_duvals\_triangle\_plot(\[duval\_trace\], True)
+```
+import duvals_triangle_plotter as dtp
+
+methane_points_list = [0.09] # units = ppm
+acetylene_points_list = [0.0] # units = ppm
+ethylene_points_list = [0.91] # units = ppm
+date = "2000-08-16"
+
+# Call the function to get Duval's Triangle traces
+duval_trace = dtp.get_duval_points_traces(methane_points_list, acetylene_points_list, ethylene_points_list, date)
+
+# Call the function to get Duval's Triangle plot
+fig = dtp.get_duvals_triangle_plot([duval_trace], True)
+```
 
 The script will generate a Duval’s Triangle plot as an output image, showing the data points and corresponding fault zones.
 
