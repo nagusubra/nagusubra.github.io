@@ -44,15 +44,43 @@ src/
     rss.xml.js              # RSS feed
 public/
   photos/          # the actual image files, referenced from content/photos/
+  subu-logo.jpg    # master logo (312x312) -- the whole favicon set is generated from this
+  favicon.ico      # multi-size (16/32/48) icon for tabs, bookmarks, address bar
+  favicon-16x16.png  # PNG fallback for browsers that skip the .ico
+  favicon-32x32.png  # high-DPI tab icon + the header logo on the site
+  apple-touch-icon.png # 180x180 iOS home-screen icon
+  icon-192.png / icon-512.png # PWA app icons, referenced from site.webmanifest
+  site.webmanifest # PWA manifest (name, theme color, icons)
   social-card.png  # 1200x630 Open Graph share card (Facebook/WhatsApp/etc)
   twitter-card.png # 1200x675 Twitter/X share card
-  apple-touch-icon.png
   google03b204e9872dc50f.html # Google Search Console verification -- keep it
+scripts/
+  gen-favicon.ps1  # regenerates the whole favicon set from public/subu-logo.jpg
 templates/
   new-post-template.md   # copy into src/content/writing/ for a new post
   new-photo.md           # copy into src/content/photos/ for a new photo
 CONTENT_GUIDE.md          # voice/style notes -- read before drafting
 ```
+
+## Favicon / site icon
+
+All icons come from one source file, `public/subu-logo.jpg`. To restyle
+the favicon:
+
+1. Replace `public/subu-logo.jpg` with your new logo (square best).
+2. Regenerate the set:
+
+   ```powershell
+   powershell -File scripts/gen-favicon.ps1 -Source public/subu-logo.jpg -OutDir public
+   ```
+
+3. Bump the `?v=` query string on the icon links in
+   `src/layouts/Base.astro` (e.g. `href="/favicon-32x32.png?v=3"`) so
+   browsers that cache favicons aggressively fetch the new one, then
+   commit and push.
+
+The header logo (`src/components/Header.astro`) uses
+`favicon-32x32.png`, so it picks the new logo up automatically.
 
 ## Publishing a new post
 
