@@ -23,6 +23,39 @@ projects. Also open to conversations with startup founders.
 - [Writing index](https://nagusubra.github.io/writing/): essays and short
   notes/takes, updated over time. Full feed at
   https://nagusubra.github.io/rss.xml
+- [The DeepSeek Saga](https://nagusubra.github.io/writing/the-deepseek-saga/):
+  DeepSeek's breakthrough -- the technological leaps, the trust and security
+  red flags, and what it means for the future of AI.
+- [Visualizing Transformer Health with Duval's Triangle Plotter](https://nagusubra.github.io/writing/visualizing-transformer-health-with-duvals-triangle-plotter/):
+  an open-source Python tool for plotting and interpreting Duval's Triangle.
+- [Benchmarking the latest LLM models: A New Era of Efficiency](https://nagusubra.github.io/writing/benchmarking-the-latest-llm-models-a-new-era-of-efficiency/):
+  DeepSeek V3 and Mistral NeMo trained with a fraction of the GPUs and power
+  of the industry giants.
+- [Benchmarking Resource Consumption to Train Leading AI Models](https://nagusubra.github.io/writing/benchmarking-resource-consumption-to-train-leading-ai-models/):
+  a benchmark of the power, water, carbon, and land costs of training top LLMs.
+- [Problem Validation Guide](https://nagusubra.github.io/writing/problem-validation-guide/):
+  a step-by-step guide to identifying, researching, and validating a problem
+  before building a solution.
+- [Lessons learned from 50 days of problem hunting !](https://nagusubra.github.io/writing/lessons-learned-from-50-days-of-problem-hunting/):
+  key takeaways from exploring and validating problems for 50+ days.
+- [50 days of problem hunting ! Problem 5](https://nagusubra.github.io/writing/50-days-of-problem-hunting-problem-5/):
+  perishable grocery waste among working individuals.
+- [50 days of problem hunting ! Problem 4](https://nagusubra.github.io/writing/50-days-of-problem-hunting-problem-4/):
+  banking apps failing users with poor financial literacy.
+- [50 days of problem hunting ! Problem 3](https://nagusubra.github.io/writing/50-days-of-problem-hunting-problem-3/):
+  unreliable power in disaster-affected regions.
+- [50 days of problem hunting ! Problem 2](https://nagusubra.github.io/writing/50-days-of-problem-hunting-problem-2/):
+  manual people counting in public spaces.
+- [50 days of problem hunting ! Problem 1](https://nagusubra.github.io/writing/50-days-of-problem-hunting-problem-1/):
+  chess players losing time adjusting pieces during time scrambles.
+- [Why Understanding the Problem is the Key and Einstein's Wisdom](https://nagusubra.github.io/writing/why-understanding-the-problem-is-the-key-and-einsteins-wisdom/):
+  why "55 minutes on the problem" reshaped my approach to solving things.
+- [Takeaways from my First Startup Weekend](https://nagusubra.github.io/writing/takeaways-from-my-first-startup-weekend/):
+  lessons from a 56-hour Techstars Startup Weekend.
+- [Why you should participate in a hackathon?](https://nagusubra.github.io/writing/why-you-should-participate-in-a-hackathon/):
+  reflections from my hackathon journey.
+- [Exploring Smartphone Choices: A simple analysis for your next upgrade](https://nagusubra.github.io/writing/exploring-smartphone-choices/):
+  a simple Android vs Apple analysis of cost, resale value, and upgrade timing.
 
 ## Photos
 
