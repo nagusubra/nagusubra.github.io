@@ -1,7 +1,7 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
-// Every post (essay, hot take, TIL, note) lives in src/content/writing/
+// Every post (essay, hot take, TIL, note) lives in src/content/blog/
 // as a single Markdown or MDX file. See templates/new-post-template.md
 // for a blank starting point, and CONTENT_GUIDE.md at the repo root for
 // voice/style notes.

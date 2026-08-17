@@ -7,7 +7,7 @@ kind: "essay"
 draft: false
 ---
 
-### Lessons **learned** from [50 days of problem hunting !](/writing/why-understanding-the-problem-is-the-key-and-einsteins-wisdom/)🎯
+### Lessons **learned** from [50 days of problem hunting !](/blog/why-understanding-the-problem-is-the-key-and-einsteins-wisdom/)🎯
 
 More than 50 days have passed since I explored and validated problems. Based on my reflections on the challenge, here are my key takeaways.
 
@@ -93,8 +93,8 @@ Thank you joining me in this journey, there is more to come 😄!
 
 Links to read my problem validations:
 
-1.  [Problem 1](/writing/50-days-of-problem-hunting-problem-1/): Competitive Over-the-board (OTB) chess players lose valuable time adjusting pieces during time scrambles in rated games on a traditional board.
-2.  [Problem 2](/writing/50-days-of-problem-hunting-problem-2/): People counting systems in public spaces often use manual, repetitive tasks that reduce employee productivity, increase fatigue, and compromise the accuracy of foot traffic data.
-3.  [Problem 3](/writing/50-days-of-problem-hunting-problem-3/): Delayed and unreliable power supplies in disaster-affected regions disrupt disaster management efforts, healthcare services, and communications and threaten individuals’ livelihoods.
-4.  [Problem 4](/writing/50-days-of-problem-hunting-problem-4/): Banking apps fail to proactively guide users with poor financial literacy toward better spending and credit habits, leading to financial vulnerability.
-5.  [Problem 5](/writing/50-days-of-problem-hunting-problem-5/): Perishable grocery is wasted at home by working individuals due to unawareness or apathy leading to redundant purchases, expired items, and financial strain.
+1.  [Problem 1](/blog/50-days-of-problem-hunting-problem-1/): Competitive Over-the-board (OTB) chess players lose valuable time adjusting pieces during time scrambles in rated games on a traditional board.
+2.  [Problem 2](/blog/50-days-of-problem-hunting-problem-2/): People counting systems in public spaces often use manual, repetitive tasks that reduce employee productivity, increase fatigue, and compromise the accuracy of foot traffic data.
+3.  [Problem 3](/blog/50-days-of-problem-hunting-problem-3/): Delayed and unreliable power supplies in disaster-affected regions disrupt disaster management efforts, healthcare services, and communications and threaten individuals’ livelihoods.
+4.  [Problem 4](/blog/50-days-of-problem-hunting-problem-4/): Banking apps fail to proactively guide users with poor financial literacy toward better spending and credit habits, leading to financial vulnerability.
+5.  [Problem 5](/blog/50-days-of-problem-hunting-problem-5/): Perishable grocery is wasted at home by working individuals due to unawareness or apathy leading to redundant purchases, expired items, and financial strain.

@@ -7,7 +7,7 @@ kind: "essay"
 draft: false
 ---
 
-### [50 days of problem hunting !](/writing/why-understanding-the-problem-is-the-key-and-einsteins-wisdom/)🎯Problem 2
+### [50 days of problem hunting !](/blog/why-understanding-the-problem-is-the-key-and-einsteins-wisdom/)🎯Problem 2
 
 #### People counting systems in public spaces often use manual, repetitive tasks that reduce employee productivity, increase fatigue, and compromise the accuracy of foot traffic data.
 

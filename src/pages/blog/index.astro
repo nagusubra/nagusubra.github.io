@@ -41,7 +41,7 @@ const dateFmt = new Intl.DateTimeFormat("en-US", {
         <ul class="flex flex-col gap-7">
           {posts.map((post, i) => (
             <li class="reveal" style={`animation-delay: ${240 + i * 80}ms`}>
-              <a href={`/writing/${post.id}/`} class="group block">
+              <a href={`/blog/${post.id}/`} class="group block">
                 <div class="flex items-baseline justify-between gap-4">
                   <span class="font-medium text-fg transition-colors group-hover:text-accent">
                     {post.data.title}
