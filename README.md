@@ -79,8 +79,9 @@ the favicon:
    browsers that cache favicons aggressively fetch the new one, then
    commit and push.
 
-The header logo (`src/components/Header.astro`) uses
-`favicon-32x32.png`, so it picks the new logo up automatically.
+Regenerating the PNGs also updates the header/favicon usage anywhere they
+are referenced. The favicon set is what actually gets served, so keep the
+`?v=` bump in step 3 and hard-refresh the browser tab after deploy.
 
 ## Publishing a new post
 
