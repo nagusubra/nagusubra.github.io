@@ -1,7 +1,7 @@
 {
   "name": "Subu",
   "short_name": "Subu",
-  "description": "Data engineer building open-source tools for industrial and energy systems. Writing, projects, and a photo dump.",
+  "description": "Context engineering in industrial and energy systems. Open-source tools, writing, projects, and a photo dump.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
