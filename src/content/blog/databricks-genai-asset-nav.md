@@ -7,8 +7,6 @@ kind: "note"
 draft: false
 ---
 
-![](/posts/databricks-genai-asset-nav/img-01.jpg)
-
 Asset Nav Assistant - navigating asset documentation with GenAI.
 
 Excited to share our latest project, Asset Nav Assistant! After two weeks of intense learning, collaboration, and rapid prototyping alongside Jingwen (Belinda) Huang, we're thrilled to unveil this tool for asset diagnosis.
@@ -28,3 +26,5 @@ A big thanks to Databricks for hosting the Generative AI World Cup, where we wer
 P.S. I thought two weeks would provide ample time to avoid pulling all-nighters compared to day-long hackathons, but I was wrong!
 
 Check out the project: [https://github.com/nagusubra/databricks_hackathon_2024](https://github.com/nagusubra/databricks_hackathon_2024)
+
+![](/posts/databricks-genai-asset-nav/img-01.jpg)

@@ -7,10 +7,6 @@ kind: "note"
 draft: false
 ---
 
-![](/posts/techstars-startup-weekend-adhd/img-01.jpg)
-
-![](/posts/techstars-startup-weekend-adhd/img-02.jpg)
-
 This past weekend, I had the opportunity to push myself outside my comfort zone, participating in a 56-hour Techstars Startup Weekend with 140+ brilliant minds at Platform Calgary.
 
 It was a crazy experience of intense brainstorming, collaboration, and creativity, giving me my first real taste of how a startup is born, pivoted, and evolved into a solution ready for the world.
@@ -22,3 +18,7 @@ Kudos to my team: Mohamed Magan, Nicole Henderson, PMP, Patrician Todinescu, Pet
 A huge thank you to everyone who contributed to this unforgettable experience. Your passion and dedication were inspiring! As Henry Ford said, "Coming together is a beginning. Keeping together is progress. Working together is success."
 
 A special shoutout to Angela Henders and Craig Elias. Truly remarkable people who supported and inspired us greatly along this journey!
+
+![](/posts/techstars-startup-weekend-adhd/img-01.jpg)
+
+![](/posts/techstars-startup-weekend-adhd/img-02.jpg)

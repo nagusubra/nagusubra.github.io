@@ -7,17 +7,11 @@ kind: "note"
 draft: false
 ---
 
-![](/posts/open-source-ai-upper-bound-2026/img-01.jpg)
-
-![](/posts/open-source-ai-upper-bound-2026/img-02.jpg)
-
 "Open source AI is just a non-profit, cash-burning dump."
 
 Right? That's what I used to think. Don't blame me, but I couldn't see how giving away your core technology could ever scale as a profitable business strategy.
 
 But after a 1:1 chat with Mark Surman (President of Mozilla) at Amii (Alberta Machine Intelligence Institute) Upper Bound conference, my perspective changed.
-
-![](/posts/open-source-ai-upper-bound-2026/img-03.jpg)
 
 Open source isn't just a noble choice. In the AI era, it is a massive distribution play and Canada's ultimate competitive advantage. Mark shared three first-principle insights that every builder and founder should consider:
 
@@ -30,3 +24,9 @@ Open source isn't just a noble choice. In the AI era, it is a massive distributi
 **Example:** Toronto-based Armilla AI. They started by open sourcing their AI assurance tool that helps companies check for compliance based on rules. As adoption increased, they realized enterprises didn't just want assurance but they wanted insurance. Today, they've scaled into a massive AI systems insurance business, leveraging their open source roots to close enterprise deals. Protecting IP the way BlackBerry did isn't how you win anymore.
 
 Canada already has a deeply rooted culture of safe, responsible, and secure innovation. If we lean into open systems, solve real procurement friction, and build for global use cases, we can stop chasing 10% incremental improvements and unlock 10x exponential growth.
+
+![](/posts/open-source-ai-upper-bound-2026/img-01.jpg)
+
+![](/posts/open-source-ai-upper-bound-2026/img-02.jpg)
+
+![](/posts/open-source-ai-upper-bound-2026/img-03.jpg)
