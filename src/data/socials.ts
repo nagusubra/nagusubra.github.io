@@ -47,6 +47,11 @@ export const socials = [
     url: "https://substack.com/@nagusubra",
     icon: "M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z",
   },
+  {
+    label: "Devpost",
+    url: "https://devpost.com/nagusubra",
+    icon: "M0 12.136L5.592 6.54l2.397 2.395L12 3.536l8.011 8.011 2.397-2.395L28 12.136 24.016 16.12l-2.397-2.396L12 23.344l-9.619-9.62L0 16.12z",
+  },
   // Add an email if/when you want one public, e.g.:
   // { label: "Email", url: "mailto:you@example.com", icon: "" },
 ];
