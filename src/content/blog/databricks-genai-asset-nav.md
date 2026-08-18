@@ -2,12 +2,12 @@
 title: "Asset Nav Assistant - Databricks GenAI World Cup"
 description: "Built an end-to-end RAG solution for asset document navigation in the Databricks Generative AI World Cup."
 publishDate: 2024-04-25
-tags: ["genai","databricks","hackathon","rag"]
+tags: ["genai","databricks","hackathon","rag","sidequests"]
 kind: "note"
 draft: false
 ---
 
-![](/posts/databricks-genai-asset-nav/img-01.png)
+![](/posts/databricks-genai-asset-nav/img-01.jpg)
 
 Asset Nav Assistant - navigating asset documentation with GenAI.
 
@@ -28,5 +28,3 @@ A big thanks to Databricks for hosting the Generative AI World Cup, where we wer
 P.S. I thought two weeks would provide ample time to avoid pulling all-nighters compared to day-long hackathons, but I was wrong!
 
 Check out the project: [https://github.com/nagusubra/databricks_hackathon_2024](https://github.com/nagusubra/databricks_hackathon_2024)
-
-Find me on [Devpost](https://devpost.com/nagusubra).
