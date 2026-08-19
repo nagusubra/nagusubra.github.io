@@ -4,6 +4,12 @@
 // descriptions; rewrite any of them in your own voice.
 export const projects = [
   {
+    name: "Traffic Dashboard",
+    description:
+      "Real-time traffic analytics for all my repositories -- views, clones, stars, forks, and community metrics.",
+    url: "https://nagusubra.github.io/traffic/",
+  },
+  {
     name: "timeseries-qc",
     description:
       "Rule-based data quality control for SCADA, DCS, and historian time series -- flags every row good, suspect, or bad.",
