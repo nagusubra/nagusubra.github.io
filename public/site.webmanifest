@@ -1,7 +1,7 @@
 {
   "name": "Subu",
   "short_name": "Subu",
-  "description": "Context engineering in industrial and energy systems. Open-source tools, writing, projects, and a photo dump.",
+  "description": "Performance engineering in industrial and energy systems. Open-source tools, writing, projects, and a photo dump.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

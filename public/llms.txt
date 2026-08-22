@@ -1,13 +1,13 @@
 # Subu
 
-> Context engineering in industrial and energy/SCADA systems. Builds
+> Performance engineering in industrial and energy/SCADA systems. Builds
 > open-source data-quality tooling on nights and weekends. Writes essays,
 > notes, and takes on context engineering, building in the open, and
 > whatever he can't stop thinking about. Also keeps an uncurated photo
 > dump of moments he didn't want to lose.
 
 Subu is open to hearing from people who want to collaborate, especially
-on context engineering, industrial/energy data tooling, and open-source
+on performance engineering, industrial/energy data tooling, and open-source
 projects. Also open to conversations with startup founders.
 
 ## Projects
