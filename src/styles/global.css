@@ -203,3 +203,80 @@ a {
 .prose li {
   margin-top: 0.4em;
 }
+
+/* Carousel animation for the blog heading -- text cycles through terms
+   moving from right to left with smooth transitions */
+.carousel-container {
+  position: relative;
+  display: inline-block;
+  min-width: 200px;
+  height: 1.2em;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: absolute;
+  display: block;
+  animation: carousel-slide 36s infinite;
+  /* Each item gets staggered by 6s (36s / 6 items) */
+}
+
+.carousel-item:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.carousel-item:nth-child(2) {
+  animation-delay: 6s;
+}
+
+.carousel-item:nth-child(3) {
+  animation-delay: 12s;
+}
+
+.carousel-item:nth-child(4) {
+  animation-delay: 18s;
+}
+
+.carousel-item:nth-child(5) {
+  animation-delay: 24s;
+}
+
+.carousel-item:nth-child(6) {
+  animation-delay: 30s;
+}
+
+@keyframes carousel-slide {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  5% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  83% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  88% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-item {
+    animation: none !important;
+  }
+  .carousel-item:nth-child(1) {
+    opacity: 1;
+  }
+  .carousel-item:nth-child(n + 2) {
+    display: none;
+  }
+}
