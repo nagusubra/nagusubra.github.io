@@ -5,11 +5,15 @@ import { projects } from "../data/projects";
 ---
 
 <Base>
-  <section class="pt-6 pb-10">
+  <section class="py-10">
     <h1
       class="reveal reveal-hero text-2xl font-semibold tracking-tight text-fg sm:text-3xl"
     >
-      {site.name}
+      <span class="carousel-container" data-count="3">
+        <span class="carousel-item">Subu</span>
+        <span class="carousel-item">Subramanian</span>
+        <span class="carousel-item">Subramanian Narayanan</span>
+      </span>
     </h1>
     <p class="reveal mt-3 max-w-lg text-lg text-muted" style="animation-delay: 120ms">
       {site.tagline}

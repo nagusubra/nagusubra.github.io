@@ -204,25 +204,22 @@ a {
   margin-top: 0.4em;
 }
 
-/* Carousel animation for the blog heading -- text cycles through terms
-   with smooth vertical scrolling effect */
+/* Carousel animation for page headings -- text cycles through terms
+   with a smooth top-down scroll and fade. Items stack in the same grid
+   cell so the container auto-sizes to the widest word (no hardcoded
+   width needed) instead of being absolutely positioned. */
 .carousel-container {
-  position: relative;
-  display: inline-block;
+  display: inline-grid;
   height: 1.3em;
-  width: 200px;
   overflow: hidden;
   vertical-align: text-bottom;
   line-height: 1.3em;
 }
 
 .carousel-item {
-  position: absolute;
-  display: block;
+  grid-area: 1 / 1;
   white-space: nowrap;
   animation: carousel-scroll 36s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
-  left: 0;
-  top: 0;
   opacity: 0;
   /* Each item gets staggered by 6s (36s / 6 items) */
 }
@@ -251,6 +248,19 @@ a {
   animation-delay: 30s;
 }
 
+/* 3-item carousels (e.g. Photos, Subu) run a shorter 18s cycle --
+   3 items x 6s each -- instead of the 6-item 36s default, so there's
+   no dead gap waiting for items 4-6 that don't exist. This needs its
+   own keyframes (not just a shorter duration): the hold/fade points
+   below are tuned as percentages of a 36s cycle, so on an 18s cycle
+   they'd land at half the absolute time and leave a long dead gap
+   before the next item starts. carousel-scroll-3 re-targets the same
+   absolute fade-in/hold/fade-out timing to the shorter duration. */
+.carousel-container[data-count="3"] .carousel-item {
+  animation-duration: 18s;
+  animation-name: carousel-scroll-3;
+}
+
 @keyframes carousel-scroll {
   0% {
     opacity: 0;
@@ -265,6 +275,29 @@ a {
     transform: translateY(0);
   }
   17% {
+    opacity: 0;
+    transform: translateY(1.5em);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(1.5em);
+  }
+}
+
+@keyframes carousel-scroll-3 {
+  0% {
+    opacity: 0;
+    transform: translateY(-1.5em);
+  }
+  4% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  28% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  34% {
     opacity: 0;
     transform: translateY(1.5em);
   }
