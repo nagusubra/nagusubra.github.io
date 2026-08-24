@@ -205,19 +205,25 @@ a {
 }
 
 /* Carousel animation for the blog heading -- text cycles through terms
-   moving from right to left with smooth transitions */
+   with smooth vertical scrolling effect */
 .carousel-container {
   position: relative;
   display: inline-block;
-  min-width: 200px;
-  height: 1.2em;
+  height: 1.3em;
+  width: 200px;
   overflow: hidden;
+  vertical-align: text-bottom;
+  line-height: 1.3em;
 }
 
 .carousel-item {
   position: absolute;
   display: block;
-  animation: carousel-slide 36s infinite;
+  white-space: nowrap;
+  animation: carousel-scroll 36s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+  left: 0;
+  top: 0;
+  opacity: 0;
   /* Each item gets staggered by 6s (36s / 6 items) */
 }
 
@@ -245,26 +251,26 @@ a {
   animation-delay: 30s;
 }
 
-@keyframes carousel-slide {
+@keyframes carousel-scroll {
   0% {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateY(-1.5em);
   }
-  5% {
+  2% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
-  83% {
+  14% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
-  88% {
+  17% {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateY(1.5em);
   }
   100% {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateY(1.5em);
   }
 }
 
