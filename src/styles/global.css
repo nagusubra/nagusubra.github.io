@@ -219,9 +219,12 @@ a {
 .carousel-item {
   grid-area: 1 / 1;
   white-space: nowrap;
-  animation: carousel-scroll 36s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* Uses the same gentle deceleration curve as the page's .reveal
+     entrance (see elegant-in below) for a smoother, more consistent
+     feel than a stock ease. */
+  animation: carousel-scroll 24s infinite cubic-bezier(0.22, 1, 0.36, 1);
   opacity: 0;
-  /* Each item gets staggered by 6s (36s / 6 items) */
+  /* Each item gets staggered by 4s (24s / 6 items) */
 }
 
 .carousel-item:nth-child(1) {
@@ -229,35 +232,35 @@ a {
 }
 
 .carousel-item:nth-child(2) {
-  animation-delay: 6s;
+  animation-delay: 4s;
 }
 
 .carousel-item:nth-child(3) {
-  animation-delay: 12s;
+  animation-delay: 8s;
 }
 
 .carousel-item:nth-child(4) {
-  animation-delay: 18s;
+  animation-delay: 12s;
 }
 
 .carousel-item:nth-child(5) {
-  animation-delay: 24s;
+  animation-delay: 16s;
 }
 
 .carousel-item:nth-child(6) {
-  animation-delay: 30s;
+  animation-delay: 20s;
 }
 
-/* 3-item carousels (e.g. Photos, Subu) run a shorter 18s cycle --
-   3 items x 6s each -- instead of the 6-item 36s default, so there's
+/* 3-item carousels (e.g. Photos, Subu) run a shorter 12s cycle --
+   3 items x 4s each -- instead of the 6-item 24s default, so there's
    no dead gap waiting for items 4-6 that don't exist. This needs its
    own keyframes (not just a shorter duration): the hold/fade points
-   below are tuned as percentages of a 36s cycle, so on an 18s cycle
+   below are tuned as percentages of a 24s cycle, so on a 12s cycle
    they'd land at half the absolute time and leave a long dead gap
    before the next item starts. carousel-scroll-3 re-targets the same
    absolute fade-in/hold/fade-out timing to the shorter duration. */
 .carousel-container[data-count="3"] .carousel-item {
-  animation-duration: 18s;
+  animation-duration: 12s;
   animation-name: carousel-scroll-3;
 }
 
