@@ -70,9 +70,11 @@
 
 html {
   scroll-behavior: smooth;
+  min-height: 100vh;
 }
 
 body {
+  min-height: 100vh;
   background: var(--color-bg);
   color: var(--color-fg);
   font-family: var(--font-sans);
@@ -320,5 +322,95 @@ a {
   }
   .carousel-item:nth-child(n + 2) {
     display: none;
+  }
+}
+
+/* ================================================================
+   CRT Monitor Overlay — 2000s Retro
+   Grain noise, vignette, phosphor dot mask, phosphor glow,
+   chromatic aberration. All pure CSS, no JS.
+   ================================================================ */
+
+/* --- Layer 1: Grain / static noise (html::after) ------------------ */
+html::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.15' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 9997;
+  animation: crt-grain 0.25s steps(5) infinite;
+}
+
+/* --- Layer 2: Vignette (body::before) ----------------------------- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 30%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* --- Layer 3: Phosphor dot mask (body::after) --------------------- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle, rgba(255, 60, 60, 0.25) 0.8px, transparent 0.8px),
+    radial-gradient(circle, rgba(60, 255, 60, 0.25) 0.8px, transparent 0.8px),
+    radial-gradient(circle, rgba(60, 100, 255, 0.25) 0.8px, transparent 0.8px);
+  background-size: 3px 3px;
+  background-position: 0 0, 1px 0, 2px 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Chromatic aberration + phosphor glow */
+body {
+  animation: crt-text-shift 8s infinite;
+}
+
+/* --- Keyframes --------------------------------------------------- */
+
+@keyframes crt-grain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-1%, 1%);
+  }
+  40% {
+    transform: translate(1%, -1%);
+  }
+  60% {
+    transform: translate(-1%, -1%);
+  }
+  80% {
+    transform: translate(1%, 1%);
+  }
+}
+
+@keyframes crt-text-shift {
+  0%,
+  100% {
+    text-shadow:
+      0 0 1px currentColor,
+      0 0 4px currentColor;
+  }
+  50% {
+    text-shadow:
+      -0.4px 0 rgba(255, 0, 0, 0.12),
+      0.4px 0 rgba(0, 255, 255, 0.12),
+      0 0 1px currentColor,
+      0 0 6px currentColor;
   }
 }
